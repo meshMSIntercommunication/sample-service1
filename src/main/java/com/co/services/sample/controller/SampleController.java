@@ -11,8 +11,8 @@ public class SampleController {
 	@GetMapping("/")
 	public Mono<String> sample1() {
 		WebClient webClient = WebClient.create();
-		Mono<String> ms1 = webClient.get().uri("http://sample-service2-v2.charles3.svc.cluster.local:9000/").retrieve().bodyToMono(String.class);
-		Mono<String> ms2 = webClient.get().uri("http://sample-service3-v1.charles3.svc.cluster.local:9000/").retrieve().bodyToMono(String.class);
+		Mono<String> ms1 = webClient.get().uri("http://sample-service2-v2.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class);
+		Mono<String> ms2 = webClient.get().uri("http://sample-service3-v1.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class);
 // 		Mono<String> ms3 = webClient.get().uri("http://localhost:9004/").retrieve().bodyToMono(String.class);
 // 		Mono<String> ms4 = webClient.get().uri("http://localhost:9005/").retrieve().bodyToMono(String.class);
 // 		Mono<String> ms5 = webClient.get().uri("http://localhost:9006/").retrieve().bodyToMono(String.class);
