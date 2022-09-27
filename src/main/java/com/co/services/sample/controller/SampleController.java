@@ -14,7 +14,7 @@ public class SampleController {
 		Mono<String> ms1 = webClient.get().uri("sample-service2-v2.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class);
 		Mono<String> ms2 = webClient.get().uri("sample-service3-v1.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class);
 		Mono<String> ms3 = webClient.get().uri("sample-service4.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class);
-// 		Mono<String> ms4 = webClient.get().uri("sample-service5.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class);
+		Mono<String> ms4 = webClient.get().uri("sample-service5.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class);
 // 		Mono<String> ms5 = webClient.get().uri("http://localhost:9006/").retrieve().bodyToMono(String.class);
 // 		Mono<String> ms6 = webClient.get().uri("http://localhost:9007/").retrieve().bodyToMono(String.class);
 // 		Mono<String> ms7 = webClient.get().uri("http://localhost:9008/").retrieve().bodyToMono(String.class);
