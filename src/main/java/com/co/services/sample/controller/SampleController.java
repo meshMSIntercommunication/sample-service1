@@ -8,7 +8,7 @@ import reactor.core.publisher.Mono;
 
 @RestController
 public class SampleController {
-	Boolean runParallel = false;
+	Boolean runParallel = true;
 	@GetMapping("/")
 		public String sample1() {
 		WebClient webClient = WebClient.create();
