@@ -28,14 +28,14 @@ public class SampleController {
 			this.callInterMs(!runParallel);
 			endTime2 = System.currentTimeMillis(); // Get the end Time sequential
 			totalRuntime += endTime2 - startTime2;
-			//if(i<10){
-			//	System.out.println("ongoing runtime is " + totalRuntime);
-			//	System.out.println("endTime/startime are: " + endTime2 + " and " + startTime2 + " for result of " + (endTime2-startTime2));
-			//}
+			if(i<10){
+				System.out.println("ongoing runtime is " + totalRuntime);
+				System.out.println("endTime/startime are: " + endTime2 + " and " + startTime2 + " for result of " + (endTime2-startTime2));
+			}
 		}
 		System.out.println("total runtime is" + totalRuntime + " and avg is"  + " for result of " + (totalRuntime/1000L));
 
-		double avgRuntime = ((double) totalRuntime/1000L)*100; 
+		double avgRuntime = ((double) totalRuntime/1000L); 
 		return new String("\n Response time(1k runs average): "
 				+ (avgRuntime) + "ms"); // Print the difference in mili seconds
 
