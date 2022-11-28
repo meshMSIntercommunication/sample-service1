@@ -28,6 +28,10 @@ public class SampleController {
 			this.callInterMs(!runParallel);
 			endTime2 = System.currentTimeMillis(); // Get the end Time sequential
 			totalRuntime += endTime2 - startTime2;
+			if(i<10){
+				System.out.println("ongoing runtime is " + totalRuntime);
+				System.out.println("endTime/startime are: " + endTime2 + " and " + startTime2 + " for result of " + endTime2-startTime2);
+			}
 		}
 	
 		double avgRuntime = ((double) totalRuntime/noRuns)*100; 
