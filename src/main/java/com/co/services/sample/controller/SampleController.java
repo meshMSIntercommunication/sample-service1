@@ -19,11 +19,10 @@ public class SampleController {
 	@GetMapping("/responseTime")
 	public String sample2() {
 		
-		long totalRuntime = 0;
-		double avgRuntime = 0;
-		long startTime2= 0;
+		long totalRuntime = 0L;
+		long startTime2= 0L;
 		int noRuns = 1000;
-		long endTime2 = 0;
+		long endTime2 = 0L;
 		for(int i=0; i<noRuns; i++){
 			startTime2 = System.currentTimeMillis();
 			this.callInterMs(!runParallel);
@@ -31,8 +30,7 @@ public class SampleController {
 			totalRuntime += startTime2 - endTime2;
 		}
 	
-		avgRuntime = totalRuntime/noRuns;
-
+		double avgRuntime = ((double) totalRuntime/noRuns)*100; 
 		return new String("\n Response time(1k runs average): "
 				+ (avgRuntime) + "ms"); // Print the difference in mili seconds
 
@@ -66,7 +64,7 @@ public class SampleController {
 			String ms6 = webClient.get().uri("sample-service7.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class).block();
 			String ms7 = webClient.get().uri("sample-service8.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class).block();
 			String ms8 = webClient.get().uri("sample-service9.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class).block();
-
+			System.out.println("Result string is: " + ms1);
 
 			return ms1 + "<br/>" + ms2 + "<br/>" + ms3 + "<br/>" + ms4 + "<br/>" + ms5 + "<br/>" + ms6 + "<br/>" + ms7 + "<br/>" + ms8;
 		}
