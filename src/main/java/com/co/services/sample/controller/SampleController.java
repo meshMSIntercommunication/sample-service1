@@ -21,7 +21,7 @@ public class SampleController {
 		
 		long totalRuntime = 0L;
 		long startTime2= 0L;
-		int noRuns = 1000L;
+		int noRuns = 1000;
 		long endTime2 = 0L;
 		for(int i=0; i<noRuns; i++){
 			startTime2 = System.currentTimeMillis();
@@ -34,7 +34,7 @@ public class SampleController {
 			}
 		}
 	
-		double avgRuntime = ((double) totalRuntime/noRuns)*100; 
+		double avgRuntime = ((double) totalRuntime/1000L)*100; 
 		return new String("\n Response time(1k runs average): "
 				+ (avgRuntime) + "ms"); // Print the difference in mili seconds
 
