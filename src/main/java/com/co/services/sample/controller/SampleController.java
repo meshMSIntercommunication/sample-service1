@@ -27,7 +27,7 @@ public class SampleController {
 			startTime2 = System.currentTimeMillis();
 			this.callInterMs(!runParallel);
 			endTime2 = System.currentTimeMillis(); // Get the end Time sequential
-			totalRuntime += startTime2 - endTime2;
+			totalRuntime += endTime2 - startTime2;
 		}
 	
 		double avgRuntime = ((double) totalRuntime/noRuns)*100; 
