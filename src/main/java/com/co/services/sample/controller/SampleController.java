@@ -21,7 +21,7 @@ public class SampleController {
 		
 		long totalRuntime = 0L;
 		long startTime2= 0L;
-		int noRuns = 1000;
+		int noRuns = 1000L;
 		long endTime2 = 0L;
 		for(int i=0; i<noRuns; i++){
 			startTime2 = System.currentTimeMillis();
