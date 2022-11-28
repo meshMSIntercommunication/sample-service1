@@ -19,21 +19,22 @@ public class SampleController {
 	@GetMapping("/responseTime")
 	public String sample2() {
 		
-		long endTime = 0;
- 		long endTime2 = 0;
+		long totalRuntime = 0;
+		double avgRuntime = 0;
+		long startTime2= 0;
+		int noRuns = 1000;
+		long endTime2 = 0;
+		for(int i=0; i<noRuns; i++){
+			startTime2 = System.currentTimeMillis();
+			this.callInterMs(!runParallel);
+			endTime2 = System.currentTimeMillis(); // Get the end Time sequential
+			totalRuntime += startTime2 - endTime2;
+		}
+	
+		avgRuntime = totalRuntime/noRuns;
 
-		long startTime = System.currentTimeMillis(); // Get the start Time
-
-		this.callInterMs(runParallel);
-
-		endTime = System.currentTimeMillis(); // Get the end Time parallel
-
-		long startTime2 = System.currentTimeMillis();
-		this.callInterMs(!runParallel);
-		endTime2 = System.currentTimeMillis(); // Get the end Time sequential
-
-		return new String("Response time(parallel): " + (endTime - startTime) + "ms\n Response time(sequential): "
-				+ (endTime2 - startTime2) + "ms"); // Print the difference in mili seconds
+		return new String("\n Response time(1k runs average): "
+				+ (avgRuntime) + "ms"); // Print the difference in mili seconds
 
 	}
 
