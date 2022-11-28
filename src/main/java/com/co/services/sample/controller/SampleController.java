@@ -30,7 +30,7 @@ public class SampleController {
 			totalRuntime += endTime2 - startTime2;
 			if(i<10){
 				System.out.println("ongoing runtime is " + totalRuntime);
-				System.out.println("endTime/startime are: " + endTime2 + " and " + startTime2 + " for result of " + endTime2-startTime2);
+				System.out.println("endTime/startime are: " + endTime2 + " and " + startTime2 + " for result of " + (endTime2-startTime2));
 			}
 		}
 	
