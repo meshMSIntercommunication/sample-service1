@@ -64,7 +64,7 @@ public class SampleController {
 			String ms6 = webClient.get().uri("sample-service7.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class).block();
 			String ms7 = webClient.get().uri("sample-service8.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class).block();
 			String ms8 = webClient.get().uri("sample-service9.charles-mesh.svc.cluster.local:9000/").retrieve().bodyToMono(String.class).block();
-			System.out.println("Result string is: " + ms1);
+			System.out.println("Result string is: " + ms1 + "<br/>" + ms2 + "<br/>" + ms3 + "<br/>" + ms4 + "<br/>" + ms5 + "<br/>" + ms6 + "<br/>" + ms7 + "<br/>" + ms8);
 
 			return ms1 + "<br/>" + ms2 + "<br/>" + ms3 + "<br/>" + ms4 + "<br/>" + ms5 + "<br/>" + ms6 + "<br/>" + ms7 + "<br/>" + ms8;
 		}
